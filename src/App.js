@@ -1,8 +1,11 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom'; // Add this import
 import './App.css';
 import { FaLeaf, FaRecycle, FaGift } from 'react-icons/fa';
 
 function App() {
+  const navigate = useNavigate(); // This should now work
+
   return (
     <div className="app-container">
       <header className="app-header">
@@ -10,7 +13,7 @@ function App() {
         <p>Innovating for a Sustainable Future</p>
         <button className="cta-button">Learn More</button>
       </header>
-      
+
       <main>
         <section className="intro-section">
           <div className="intro-text">
@@ -25,7 +28,9 @@ function App() {
             <FaLeaf className="feature-icon" />
             <h3>AI-Optimized Packaging</h3>
             <p>Utilize cutting-edge AI to minimize packaging waste while maintaining product safety.</p>
-            <button className="feature-button">Explore AI Tech</button>
+            <button className="feature-button" onClick={() => navigate('/explore-ai-tech')}>
+              Explore AI Tech
+            </button>
           </div>
           <div className="feature-card">
             <FaRecycle className="feature-icon" />
